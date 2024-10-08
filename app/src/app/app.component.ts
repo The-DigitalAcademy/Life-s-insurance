@@ -11,7 +11,7 @@ import { OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponents {
+export class AppComponents implements OnInit {
   title = 'app';
 
   ngOnInit(): void {
