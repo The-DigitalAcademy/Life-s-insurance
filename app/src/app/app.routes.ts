@@ -3,7 +3,7 @@ import { LifeComponent } from './life/life.component';
 
 export const routes: Routes = [
     {
-        path: 'LifeComponent',
+        path: '',
         component: LifeComponent,
     }
 ];

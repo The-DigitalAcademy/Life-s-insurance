@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { initFlowbite } from 'flowbite';
-import { OnInit } from '@angular/core';
 
 
 @Component({
@@ -11,13 +10,10 @@ import { OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponents implements OnInit {
+export class AppComponent {
   title = 'app';
 
   ngOnInit(): void {
     initFlowbite();
   }
 }
-
-
-
