@@ -1,5 +1,5 @@
 
-
+<app-navbar></app-navbar>
 <nav class="bg-black border-gray-200 dark:bg-white-600  border-gray-200 dark:bg-gray-white dark:border-gray-600" >
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <svg fill="#ffffff" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40px" height="40px" viewBox="0 0 256 190" enable-background="new 0 0 256 190" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="1.024"></g><g id="SVGRepo_iconCarrier"> <path d="M48.12,27.903C48.12,13.564,59.592,2,74.023,2c14.339,0,25.903,11.564,25.903,25.903 C99.834,42.335,88.27,53.806,74.023,53.806C59.684,53.806,48.12,42.242,48.12,27.903z M191,139h-47V97c0-20.461-17.881-37-38-37H43 C20.912,60,1.99,79.14,2,98v77c-0.026,8.533,6.001,12.989,12,13c6.014,0.011,12-4.445,12-13v-75h8v88h78v-88h8l0.081,50.37 c-0.053,8.729,5.342,12.446,10.919,12.63h60C207.363,163,207.363,139,191,139z M254,17.792v63.167c0,0-0.563,29.22-47.375,47.375 c-46.812-18.155-47.375-47.375-47.375-47.375V17.792L206.61,2.01V2l0.015,0.005L206.64,2v0.01L254,17.792z M235.854,48.753 l-8.365-8.389l-26.994,26.915l-14.721-14.726l-8.379,8.379l23.09,23.085L235.854,48.753z"></path> </g></svg>
@@ -14,13 +14,13 @@
     <div class="hidden w-full md:block md:w-auto" id="navbar-default">
       <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-black rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0  md:dark:bg-gray-900 ">
         <li>
-          <a [routerLink]="['/home insurance']" routerLinkActive="router-link-active" class="block py-2 px-3 text-white rounded hover:bg-green-600 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 dark:text-white md:dark:hover: dark:hover:bg-green-700 dark:hover:text-white md:dark:hover:bg-transparent">Home Insurance</a>
+          <a [routerLink]="['/homeInsurer']" routerLinkActive="router-link-active" class="block py-2 px-3 text-white rounded hover:bg-green-600 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 dark:text-white md:dark:hover: dark:hover:bg-green-700 dark:hover:text-white md:dark:hover:bg-transparent">Home Insurance</a>
         </li>
         <li>
           <a [routerLink]="['/business']" routerLinkActive="router-link-active"  class="block py-2 px-3 text-white rounded hover:bg-green-600 md:hover:bg-transparent md:border-0 md:hover:text--200 md:p-0 dark:text-white md:dark:hover:text-pink-200 dark:hover:bg-green-700 dark:hover:text-white md:dark:hover:bg-transparent">Business Insurance</a>
         </li>
         <li>
-          <a [routerLink]="['/contact']" routerLinkActive="router-link-active"  class="block py-2 px-3 text-white rounded hover:bg-green-600 md:hover:bg-transparent md:border-0 md:hover:text-pink-200 md:p-0 dark:text-white md:dark:hover:text-pink-200 dark:hover:bg-green-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          <a [routerLink]="['/contract']" routerLinkActive="router-link-active"  class="block py-2 px-3 text-white rounded hover:bg-green-600 md:hover:bg-transparent md:border-0 md:hover:text-pink-200 md:p-0 dark:text-white md:dark:hover:text-pink-200 dark:hover:bg-green-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
         </li>
         <li>
           <a [routerLink]="['/profile']" routerLinkActive="router-link-active"  class="block py-2 px-3 text-white rounded hover:bg-green-600 md:hover:bg-transparent md:border-0 md:hover:text-pink-200 md:p-0 dark:text-white md:dark:hover:text-pink-200:hover:bg-green-700 dark:hover:text-white md:dark:hover:bg-transparent">Profile</a>
@@ -35,3 +35,4 @@
     </div>
   </div>
 </nav>
+<app-nav></app-nav>

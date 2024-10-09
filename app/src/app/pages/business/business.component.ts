@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NavbarComponent } from "../../UI/shared--UI/navbar/navbar.component";
+import { NavComponent } from "../../nav/nav.component";
 
 @Component({
   selector: 'app-business',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, FormsModule],
+  imports: [RouterLink, RouterLinkActive, FormsModule, NavbarComponent, NavComponent],
   templateUrl: './business.component.html',
-  styleUrls: ['./business.component.css'] 
+  styleUrls: ['./business.component.css']
 })
 export class BusinessComponent {
   selectedPlan: string = '';
@@ -17,13 +19,13 @@ export class BusinessComponent {
     email: '',
     password: ''
   };
-  
+
   firstName: string = '';
   lastName: string = '';
   email: string = '';
   password: string = '';
 
- 
+
   message: string = '';
 
   constructor() {}
@@ -38,7 +40,7 @@ export class BusinessComponent {
         password: this.password,
       });
 
-      
+
       this.submitDataToService({
         selectedPlan: this.selectedPlan,
         firstName: this.firstName,
@@ -47,10 +49,10 @@ export class BusinessComponent {
         password: this.password,
       });
 
-     
+
       this.resetForm();
 
-     
+
       this.message = 'Registration successful!';
 
     } else {
@@ -65,12 +67,12 @@ export class BusinessComponent {
     this.lastName = '';
     this.email = '';
     this.password = '';
-    this.message = ''; 
+    this.message = '';
   }
 
-  
+
   private submitDataToService(data: any) {
     console.log('Submitting data to service:', data);
-    
+
   }
 }
