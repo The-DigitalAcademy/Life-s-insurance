@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../UI/shared--UI/navbar/navbar.component';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -14,14 +15,14 @@ import { NavbarComponent } from '../UI/shared--UI/navbar/navbar.component';
 export class HomeInsurerComponent {
 
 
-  // http = inject(HttpClient);
-  // client: any[] =[];
+  http = inject(HttpClient);
+  client: any[] =[];
 
-  // private apUrl = 'http://localhost:4200';
+  private apUrl = 'http://localhost:4200';
 
-  // constructor(){
+  constructor(){  this.getClient().join()
 
-  // }
+  }
   
 }
 
