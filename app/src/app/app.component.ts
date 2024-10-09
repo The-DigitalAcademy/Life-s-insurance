@@ -16,4 +16,3 @@ export class AppComponent implements OnInit {
     initFlowbite();
   }
 }
-
