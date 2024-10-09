@@ -9,8 +9,10 @@ h2 {
 }
 
 .container {
-    position: relative;
+    position:relative;
     z-index: 10;
+    margin-top: 300px;
+    border-radius: 100px;
 }
 
 iframe {

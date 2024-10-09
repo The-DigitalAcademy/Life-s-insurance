@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,RouterLinkActive],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })
