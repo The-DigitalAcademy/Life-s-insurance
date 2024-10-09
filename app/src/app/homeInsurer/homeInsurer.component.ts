@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './homeInsurer.component.html',
-  styleUrl: './homeInsurer.component.css'
-})
-export class HomeInsurerComponent{
+  styleUrl: './homeInsurer.component.css',
 
-}
+})
+export class HomeInsurerComponent {}
+
