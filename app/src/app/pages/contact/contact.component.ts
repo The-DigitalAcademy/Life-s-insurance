@@ -5,9 +5,9 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-contract',
   standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './contract.component.html',
-  styleUrl: './contract.component.css'
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.css'
 })
-export class ContractComponent {
+export class ContactComponent {
 
 }
