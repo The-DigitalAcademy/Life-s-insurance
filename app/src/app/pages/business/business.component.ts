@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NavbarComponent } from "../../UI/shared--UI/navbar/navbar.component";
+import { NavComponent } from "../../nav/nav.component";
 
 @Component({
   selector: 'app-business',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, FormsModule],
+  imports: [RouterLink, RouterLinkActive, FormsModule, NavbarComponent, NavComponent],
   templateUrl: './business.component.html',
   styleUrls: ['./business.component.css'] 
 })
