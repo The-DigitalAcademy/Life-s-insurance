@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+
 <div class="bg-white py-6 sm:py-8 lg:py-12">
     <div class="mx-auto max-w-screen-xl px-4 md:px-8">
       <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl xl:mb-12">Our plans for you</h2>
@@ -5,7 +7,7 @@
    <div class="mb-12">Buildings (combined) Fire, Business interruption Theft, Office contents, Money, Glass, Goods in transit, Business all risks, Accidental damage, Fidelity insurance (theft by employees), Public liability, Personal accident cover (individuals and employees), Vehicles, Electronic equipment, Machinery breakdown, Business interruption (following machinery breakdown), Deterioration of stock.
   </div> 
       <div class="mb-6 grid gap-6 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-8">
-        <!-- plan - start -->
+       
         <div class="flex flex-col rounded-lg border p-4 pt-6">
           <div class="mb-12">
             <div class="mb-2 text-center text-2xl font-bold text-gray-800">Plan A</div>
@@ -16,7 +18,7 @@
             <div class="text-center mb-4 ">Our coverage includes protection against damage caused by:</div>
   
             <div class="space-y-2">
-              <!-- check - start -->
+             
               <div class="flex gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -24,9 +26,7 @@
   
                 <span class="text-gray-600">Gross profits</span>
               </div>
-              <!-- check - end -->
-  
-              <!-- check - start -->
+
               <div class="flex gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -44,9 +44,7 @@
   
                 <span class="text-gray-600">Gross revenue</span>
               </div>
-              <!-- check - end -->
-  
-              <!-- check - start -->
+
               <div class="flex gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -56,10 +54,6 @@
               </div>
 
 
-
-
-            
-              <!-- check - end -->
             </div>
           </div>
   
@@ -72,9 +66,7 @@
   
           </div>
         </div>
-        <!-- plan - end -->
-  
-        <!-- plan - start -->
+
         <div class="relative flex flex-col rounded-lg border-2 border-green-600 p-4 pt-6">
           <div class="mb-12">
             <div class="absolute inset-x-0 -top-3 flex justify-center">
@@ -89,7 +81,7 @@
             <div class="text-center">Our coverage includes protection against damage caused by:</div>
            
             <div class="space-y-2">
-              <!-- check - start -->
+         
               <div class="flex gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -97,9 +89,7 @@
   
                 <span class="text-gray-600">Fire</span>
               </div>
-              <!-- check - end -->
-  
-              <!-- check - start -->
+
               <div class="flex gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -107,7 +97,7 @@
   
                 <span class="text-gray-600">Lightning</span>
               </div>
-              <!-- check - end -->
+    
 
               <div class="flex gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -303,4 +293,11 @@
         <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-green-600 peer-focus:dark:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
     </div>
     <button  type="submit" (click)="onSubmit()" class=" text-white bg-green-600 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-bl-gray-900 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-900 dark:hover:bg-green-400 dark:focus:ring-green-400">Submit</button>
-</form>
+   
+
+
+  </form>
+
+  <div class="text-center text-green-600 mt-4" *ngIf="message">{{ message }}</div>
+
+<app-nav></app-nav>
