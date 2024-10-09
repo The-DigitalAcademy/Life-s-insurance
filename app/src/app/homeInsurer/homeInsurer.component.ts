@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from '../UI/shared--UI/navbar/navbar.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,NavbarComponent],
   templateUrl: './homeInsurer.component.html',
   styleUrl: './homeInsurer.component.css',
 
