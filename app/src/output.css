@@ -1618,6 +1618,11 @@ video {
     --tw-text-opacity: 1;
     color: rgb(251 207 232 / var(--tw-text-opacity));
   }
+
+  .md\:hover\:text-green-600:hover {
+    --tw-text-opacity: 1;
+    color: rgb(22 163 74 / var(--tw-text-opacity));
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1828,6 +1833,11 @@ video {
   .dark\:focus\:ring-green-800:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(22 101 52 / var(--tw-ring-opacity));
+  }
+
+  .dark\:focus\:ring-white:focus {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity));
   }
 
   .group:hover .dark\:group-hover\:text-blue-500 {
