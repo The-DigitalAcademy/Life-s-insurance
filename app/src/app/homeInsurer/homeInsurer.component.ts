@@ -18,6 +18,7 @@ export class HomeInsurerComponent {
 
   http = inject(HttpClient);
   client: any[] = [];
+  plans
 
   private apUrl = 'http://localhost:3000';
 

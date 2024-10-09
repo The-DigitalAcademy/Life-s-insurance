@@ -27,16 +27,30 @@
 
         }
     ]
+},
 
+    {
     "Plans" :[
-        {  "plan": "A ,Avanced feaures for Individuals and organizations ,
-        "
+        {  "plan": "A ",
+        "What you get":"Emergency plumbing, electrical and locksmith services",
+        ",": "accidental loss or damage to building",
+        ",": "Cover for keys, locks and remote controls",
+        ",": "Loss or damage caused by collision, theft, fire or storms",
+        ",": "Theft and burglary"
+     },
 
 
+     {  "plan": "B ",
+        "What you get":"accidental loss or damage to building",
+        ",": "Loss or damage caused by collision, theft, fire or storms",
+        ",": "Theft and burglary"
+     },
+     {  "plan": "C ",
+     "What you get":"accidental loss or damage to building",
+     ",": "Loss or damage caused by collision, theft, fire or storms",
+     
+  },
 
-
-
-    }
     ]
 
-}
+    }
