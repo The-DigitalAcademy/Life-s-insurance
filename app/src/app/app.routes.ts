@@ -30,5 +30,6 @@ export const routes: Routes = [
   { path: 'users', component: ContractComponent },
   { path: 'homeInsurer', component: HomeInsurerComponent },
 
+  { path: 'home', component: HomeComponent },
   { path: 'business', title: 'Business', component: BusinessComponent },
 ];
