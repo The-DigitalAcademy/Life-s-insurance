@@ -12,7 +12,6 @@ import { initFlowbite } from 'flowbite';
   styleUrl: './app.component.css'
 })
 
-export class AppComponent{
 
 export class AppComponent implements OnInit {
 
