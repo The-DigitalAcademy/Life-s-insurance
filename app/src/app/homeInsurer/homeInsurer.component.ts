@@ -18,7 +18,7 @@ export class HomeInsurerComponent {
 
   http = inject(HttpClient);
   client: any[] = [];
-  plans
+  plan: any [] =[];
 
   private apUrl = 'http://localhost:3000';
 
@@ -30,19 +30,22 @@ export class HomeInsurerComponent {
       console.log(response);
       this.client = response; // Assuming your API response has a 'client' key
     });
-  }
+  
+    this.getPlan().subscribe((response: any[]) => {
+      console.log(response);
+      this.plan = response; // Assuming your API response has a 'client' key
+    });
+  };
 
 
-  // constructor(){  
-  //   this.getClient().subscribe((response: any[]) => {
-  //     console.log(resp)];
-  //     this.client = resp;
-  //   });
-
-  // }
+  
   getClient(): Observable <any>{
     return this.http.get<any[]>(`${this.apUrl}/client`);
   }
+  getPlan(): Observable <any>{
+    return this.http.get<any[]>(`${this.apUrl}/plan`);
+  }
+  
 }
 
 
