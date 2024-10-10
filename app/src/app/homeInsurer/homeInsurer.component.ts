@@ -1,3 +1,4 @@
+
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../UI/shared--UI/navbar/navbar.component';
@@ -8,10 +9,14 @@ import { NavComponent } from "../nav/nav.component";
 import { NgIf } from '@angular/common';
 
 
+
+
 @Component({
   selector: 'app-home',
   standalone: true,
+
   imports: [RouterOutlet, NavbarComponent, HttpClientModule, NavComponent,NgIf],
+
   templateUrl: './homeInsurer.component.html',
   styleUrl: './homeInsurer.component.css',
 
