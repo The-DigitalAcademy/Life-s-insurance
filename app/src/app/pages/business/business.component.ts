@@ -16,8 +16,7 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
 })
 export class BusinessComponent implements OnInit {
   apiURL = 'http://localhost:3000/plans';
-  clientsURL = 'http://localhost:3000/clients';
-  employeesURL = 'http://localhost:3000/employees';
+
 
   selectedPlan: string = '';
   firstName: string = '';
@@ -35,8 +34,8 @@ export class BusinessComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchPlans();
-    this.fetchClients();
-    this.fetchEmployees();
+    // this.fetchClients();
+    // this.fetchEmployees();
   }
 
   fetchPlans() {
@@ -50,27 +49,27 @@ export class BusinessComponent implements OnInit {
     );
   }
 
-  fetchClients() {
-    this.http.get<any[]>(this.clientsURL).subscribe(
-      (data) => {
-        this.clients = data;
-      },
-      (error) => {
-        console.error('Error fetching clients:', error);
-      }
-    );
-  }
+  // fetchClients() {
+  //   this.http.get<any[]>(this.clientsURL).subscribe(
+  //     (data) => {
+  //       this.clients = data;
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching clients:', error);
+  //     }
+  //   );
+  // }
 
-  fetchEmployees() {
-    this.http.get<any[]>(this.employeesURL).subscribe(
-      (data) => {
-        this.employees = data;
-      },
-      (error) => {
-        console.error('Error fetching employees:', error);
-      }
-    );
-  }
+  // fetchEmployees() {
+  //   this.http.get<any[]>(this.employeesURL).subscribe(
+  //     (data) => {
+  //       this.employees = data;
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching employees:', error);
+  //     }
+  //   );
+  // }
 
   isEmailValid(email: string): boolean {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
