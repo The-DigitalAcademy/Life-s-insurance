@@ -24,7 +24,7 @@ export class AuthService {
     this.users.push(userData);
 
     alert(`${userData.name} was registered successfully!!!`);
-    this.router.navigate(['/Login']);
+    this.router.navigate(['/login']);
   }
 
   onLogin(userData: UserInterface) {
