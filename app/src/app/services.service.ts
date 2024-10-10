@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { UsersInterface } from '../types/users';
+
 import { Router } from '@angular/router';
 
 @Injectable({
