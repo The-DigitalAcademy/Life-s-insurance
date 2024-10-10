@@ -1,1 +1,60 @@
-{}
+{
+
+
+    "client": [
+        {
+            "firstname":"Mbali",
+            "lastname": "Smith",
+            "age":"smith",
+            "identitynum":"112233445566",
+            "phonenum":"0123456789",
+            "emailAdd":"mbali@gmail.com",
+            "income": "6000",
+            "plan": "plan"
+
+
+        },
+
+        {  "firstname":"Life",
+            "lastname": "Lebisi",
+            "age":"32",
+            "identitynum":"112233445566",
+            "phonenum":"0123456789",
+            "emailAdd":"life@gmail.com",
+            "income": "9000",
+            "plan": "plan"
+
+
+        }
+    ],
+
+
+    
+//     "Plan" :[
+//        { "name": "A",
+//           "plan ":
+
+//         "Emergency plumbing, electrical and locksmith services"},
+
+
+ 
+//     { "name": "B",
+//       "plan ":
+
+     
+//      "accidental loss or damage to building",
+
+//  } ,
+
+//    { "name": "C",
+//      "plan ":
+
+     
+//      "accidental loss or damage to building",
+     
+//       } 
+
+     
+//      ]
+
+//     }  
