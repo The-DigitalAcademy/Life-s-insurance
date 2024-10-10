@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -8,5 +8,29 @@ import { Component } from '@angular/core';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+  authService = inject (AuthService)
+  email: any;
+  password: any;
+  
+    
+    
+      onLogin(email: string, password: string) {
+    
+        if (!email) {
+          alert("Email is required")
+          return;
+        }
+    
+        if (!password) {
+          alert("Password is required")
+          return;
+        }
+    
+        this.authService.onLogin({
+          email, password,
+          name: ''
+        });
+      }
+    
 
 }
