@@ -3,116 +3,83 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NavbarComponent } from "../../UI/shared--UI/navbar/navbar.component";
 import { NavComponent } from "../../nav/nav.component";
-import { HttpClientModule } from '@angular/common/http';
-import { HttpClient } from '@angular/common/http';
-import { CommonModule } from '@angular/common'; // Import CommonModule
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { UserInterface } from '../../../../Types 3/ UserInterface';
+
 
 @Component({
   selector: 'app-business',
   standalone: true,
-  imports: [RouterLink,RouterLinkActive,FormsModule,NavbarComponent,NavComponent,HttpClientModule, CommonModule],
+  imports: [RouterLink, RouterLinkActive, FormsModule, NavbarComponent, NavComponent, HttpClientModule, CommonModule],
   templateUrl: './business.component.html',
   styleUrls: ['./business.component.css'] 
 })
 export class BusinessComponent implements OnInit {
-  apiURL = 'http://localhost:3000/plans';
-  clientsURL = 'http://localhost:3000/clients';
-  employeesURL = 'http://localhost:3000/employees';
-
-  selectedPlan: string = '';
-  firstName: string = '';
-  lastName: string = '';
-  email: string = '';
-  password: string = '';
-  
-  plans: any[] = [];
-  clients: any[] = [];
-  employees: any[] = [];
-  
-  message: string = '';
+  apiURL = 'http://localhost:3000/businessplan';
+  businessplan: any[] = [];
+  selectedPlan = '';
+  firstName = '';
+  lastName = '';
+  email = '';
+  password = '';
+  message = '';
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.fetchPlans();
-    this.fetchClients();
-    this.fetchEmployees();
   }
 
-  fetchPlans() {
+  fetchPlans(): void {
     this.http.get<any[]>(this.apiURL).subscribe(
-      (data) => {
-        this.plans = data;
-      },
-      (error) => {
-        console.error('Error fetching plans:', error);
-      }
-    );
-  }
-
-  fetchClients() {
-    this.http.get<any[]>(this.clientsURL).subscribe(
-      (data) => {
-        this.clients = data;
-      },
-      (error) => {
-        console.error('Error fetching clients:', error);
-      }
-    );
-  }
-
-  fetchEmployees() {
-    this.http.get<any[]>(this.employeesURL).subscribe(
-      (data) => {
-        this.employees = data;
-      },
-      (error) => {
-        console.error('Error fetching employees:', error);
-      }
+      data => this.businessplan = data,
+      error => console.error('Error fetching plans:', error)
     );
   }
 
   isEmailValid(email: string): boolean {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
-  onSubmit() {
-    if (this.firstName && this.lastName && this.isEmailValid(this.email) && this.password && this.selectedPlan) {
-      console.log('Form submitted successfully:', {
+  onRegister(): void {
+    if (this.isFormValid()) {
+      const formData: UserInterface = {
         selectedPlan: this.selectedPlan,
         firstName: this.firstName,
         lastName: this.lastName,
         email: this.email,
         password: this.password,
-      });
-
-      this.submitDataToService({
-        selectedPlan: this.selectedPlan,
-        firstName: this.firstName,
-        lastName: this.lastName,
-        email: this.email,
-        password: this.password,
-      });
-
-      this.resetForm();
-      this.message = 'Registration successful!';
+        name: undefined
+      };
+      this.submitData(formData);
     } else {
       this.message = 'Please fill out all required fields and ensure the email is valid.';
-      console.error('Please fill out all required fields and ensure the email is valid.');
+      console.error(this.message);
     }
   }
 
-  resetForm() {
-    this.selectedPlan = '';
-    this.firstName = '';
-    this.lastName = '';
-    this.email = '';
-    this.password = '';
+  isFormValid(): boolean {
+    return Boolean(this.firstName) && 
+           Boolean(this.lastName) && 
+           this.isEmailValid(this.email) && 
+           Boolean(this.password) && 
+           Boolean(this.selectedPlan);
+  }
+
+  resetForm(): void {
+    this.selectedPlan = this.firstName = this.lastName = this.email = this.password = '';
     this.message = ''; 
   }
 
-  private submitDataToService(data: any) {
-    console.log('Submitting data to service:', data);
+  private submitData(data: UserInterface): void {
+    this.http.post('http://localhost:4200/profile', data).subscribe(
+      response => {
+        console.log('Data submitted successfully:', response);
+        this.message = 'Registration successful!';
+        this.resetForm();
+      },
+      error => console.error('Error submitting data:', error)
+    );
   }
 }

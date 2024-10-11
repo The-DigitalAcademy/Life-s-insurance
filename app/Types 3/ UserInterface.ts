@@ -1,7 +1,8 @@
 export interface UserInterface {
+    name: any;
+    firstName: string;
+    lastName: string;
+    email: string;
     password: string;
-    name:string;
-    email:string; 
-
-
+    selectedPlan: string; 
 }
