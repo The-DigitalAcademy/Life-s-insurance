@@ -1,6 +1,4 @@
-<p class="firstparagraph"><b>Home insurance tailored to your lifestyle</b>
-  Protect your home contents, buildings, and portable items with home insurance from Discovery that is comprehensive, flexible, and affordable.
-</p>
+<p class="firstparagraph"><b>Home insurance tailored to your lifestyle</b></p>
 
 <div class="bg-white py-6 sm:py-8 lg:py-12">
   <div class="mx-auto max-w-screen-xl px-4 md:px-8">
@@ -34,7 +32,7 @@
   </div>
 </div>
 
-<form class="max-w-md mx-auto" (ngSubmit)="onRegister(name.value, email.value, password.value)">
+<form class="max-w-md mx-auto" (ngSubmit)="onRegister(name.value, email.value, password.value, selectedPlan)">
   <div class="mb-2 text-center text-2xl font-bold text-gray-800">Get your plan</div>
   <div class="grid md:grid-cols-2 md:gap-6">
     <div class="relative z-0 w-full mb-5 group">
@@ -47,8 +45,13 @@
       <input type="password" #password name="password" class="block py-2.5" placeholder="Password" required />
     </div>
   </div>
+
+  <div class="mb-4">
+    <label for="plan-select" class="block mb-2">Select a Plan</label>
+    <select id="plan-select" #selectedPlan class="block w-full">
+      <option *ngFor="let plan of houseplans" [value]="plan.id">{{ plan.name }}</option>
+    </select>
+  </div>
+  
   <button type="submit" class="text-white bg-green-600">Submit</button>
 </form>
-
-
-

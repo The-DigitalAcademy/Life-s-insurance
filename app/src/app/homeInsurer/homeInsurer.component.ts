@@ -51,19 +51,73 @@ constructor(){
       return;
     }
 
-
-    
-    // this.authService.onRegister({ name, email, password }).subscribe({
-    //   next: (response: { error: string; }) => {
-    //     if (response.error) {
-    //       alert('Registration failed: ' + response.error);
-    //     } else {
-    //       alert('Registration successful!');
-    //     }
-    //   },
-    //   error: (error: { message: string; }) => {
-    //     alert('Registration failed: ' + error.message);
-    //   },
-    // });
   }
-}
+    
+    this.authService.onRegister({ name, email, password }).subscribe({
+      next: (response: { error: string; }) => {
+        if (response.error) {
+          alert('Registration failed: ' + response.error);
+        } else {
+          alert('Registration successful!');
+        }
+      },
+      error: (error: { message: string; }) => {
+        alert('Registration failed: ' + error.message);
+      },
+    });
+  
+
+    // import { Component, inject } from '@angular/core';
+    // import { Router } from '@angular/router';
+    // import { HttpClient } from '@angular/common/http';
+    // import { AuthService } from '../Services/auth.service';
+    
+    // @Component({
+    //   selector: 'app-home',
+    //   standalone: true,
+    //   templateUrl: './homeInsurer.component.html',
+    //   styleUrls: ['./homeInsurer.component.css'],
+    // })
+    // export class HomeInsurerComponent {
+    //   houseplans: any[] = [];
+    //   http = inject(HttpClient);
+    //   authService = inject(AuthService);
+    //   router = inject(Router);
+    //   private apiUrl = 'http://localhost:3001';
+    
+    //   constructor() {
+    //     this.getHouseplans().subscribe((resp: any) => {
+    //       console.log(resp);
+    //       this.houseplans = resp;
+    //     });
+    //   }
+    
+    //   getHouseplans() {
+    //     return this.http.get(`${this.apiUrl}/houseplans`);
+    //   }
+    
+    //   onRegister(name: string, email: string, password: string, selectedPlan: any) {
+    //     if (!name) {
+    //       alert('Username is required');
+    //       return;
+    //     }
+    
+    //     if (!email) {
+    //       alert('Email is required');
+    //       return;
+    //     }
+    
+    //     if (!password) {
+    //       alert('Password is required');
+    //       return;
+    //     }
+    
+    //     const userData = { name, email, password };
+        
+    //     this.authService.onRegister(userData);
+        
+    //     // Navigate to profile with selected plan
+    //     this.router.navigate(['/profile'], { queryParams: { plan: selectedPlan } });
+    //   }
+    // }
+    

@@ -9,5 +9,6 @@ import { NavbarComponent } from "../UI/shared--UI/navbar/navbar.component";
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent {
+  
 
 }

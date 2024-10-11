@@ -1,8 +1,7 @@
 import { inject, Injectable } from '@angular/core';
-// import { UserInterface } from '../Types/ UserInterface';
-import { Router } from '@angular/router';
+
 import { UserInterface } from '../../../Types 3/ UserInterface';
-import { Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -13,34 +12,22 @@ export class AuthService {
 
   constructor() {}
 
-  // onRegister(userData: UserInterface) {
-  //   const userEmail = userData.email;
-
-  //   for (let i = 0; i < this.users.length; i++) {
-  //     if (this.users[i].email == userEmail) {
-  //       alert(`${userEmail} already taken`);
-  //       return;
-  //     }
-  //   }
-
-  //   this.users.push(userData);
-
-  //   alert(`${userData.name} was registered successfully!!!`);
-  //   this.router.navigate(['/login']);
-  // }
-  onRegister(userData: UserInterface): Observable<{ error?: string }> {
+  onRegister(userData: UserInterface) {
     const userEmail = userData.email;
 
-    // Check if the email is already taken
-    if (this.users.some(user => user.email === userEmail)) {
-      return of({ error: `${userEmail} already taken` });
+    for (let i = 0; i < this.users.length; i++) {
+      if (this.users[i].email == userEmail) {
+        alert(`${userEmail} already taken`);
+        return;
+      }
     }
 
-    // Register the user
     this.users.push(userData);
-    this.router.navigate(['/login']); // Navigate after successful registration
-    return of({}); // Return an observable with an empty object on success
+
+    alert(`${userData.name} was registered successfully!!!`);
+    this.router.navigate(['/login']);
   }
+
   onLogin(userData: UserInterface) {
     console.log(userData);
 
@@ -64,7 +51,7 @@ export class AuthService {
 
 // import { Injectable, inject } from '@angular/core';
 
-// import { UserInterface} from '../Types/ UserInterface';
+// import { UserInterface} from '../Types';
 // import { Router } from '@angular/router';
 // import { Observable, of } from 'rxjs';
 
