@@ -1,250 +1,54 @@
-<!-- <app-navbar></app-navbar> -->
 <p class="firstparagraph"><b>Home insurance tailored to your lifestyle</b>
-  Protect your home contents, buildings and portable items with home insurance from Discovery that is comprehensive, flexible and affordable. </p>
-
+  Protect your home contents, buildings, and portable items with home insurance from Discovery that is comprehensive, flexible, and affordable.
+</p>
 
 <div class="bg-white py-6 sm:py-8 lg:py-12">
   <div class="mx-auto max-w-screen-xl px-4 md:px-8">
     <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl xl:mb-12">Our plans for you</h2>
 
     <div class="mb-6 grid gap-6 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-8">
-      <!-- plan - start -->
-      <div class="flex flex-col rounded-lg border p-4 pt-6">
+      <div *ngFor="let plan of houseplans" class="flex flex-col rounded-lg border p-4 pt-6">
         <div class="mb-12">
-          <div class="mb-2 text-center text-2xl font-bold text-gray-800">Plan A</div>
-
-          <p class="mx-auto mb-8 px-8 text-center text-gray-500">For individuals and organizations who want to try our system</p>
+          <div class="mb-2 text-center text-2xl font-bold text-gray-800">{{ plan.name }}</div>
+          <p class="mx-auto mb-8 px-8 text-center text-gray-500">For individuals and organizations</p>
 
           <div class="space-y-2">
-            <!-- check - start -->
-            <div class="flex gap-2">
+            <div *ngFor="let feature of plan.features" class="flex gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-
-              <span class="text-gray-600">accidental loss or damage to building</span>
+              <span class="text-gray-600">{{ feature }}</span>
             </div>
-            <!-- check - end -->
-
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">Emergency plumbing, electrical and locksmith services</span>
-            </div>
-            <!-- check - end -->
-
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">Cover for keys, locks and remote controls
-
-              </span>
-            </div>
-            <!-- check - end -->
-
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">Loss or damage caused by collision, theft, fire or storms
-              </span>
-            </div>
-            <!-- check - end -->
           </div>
-
-
-        <!-- check - start -->
-        <div class="flex gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg>
-
-          <span class="text-gray-600">Theft and burglary
-          </span>
         </div>
-        <!-- check - end -->
-      </div>
-
 
         <div class="mt-auto flex flex-col gap-8">
           <div class="flex items-end justify-center gap-1">
-
             <span class="self-start text-gray-600 text-green-700">R</span>
-            <span class="text-4xl font-bold text-gray-800 text-green-700">700</span>
+            <span class="text-4xl font-bold text-gray-800 text-green-700">{{ plan.price }}</span>
             <span class="text-gray-500">per user/month</span>
           </div>
-
-
         </div>
       </div>
-      <!-- plan - end -->
-
-      <!-- plan - start -->
-      <div class="relative flex flex-col rounded-lg border-2 border-indigo-500 p-4 pt-6">
-        <div class="mb-12">
-          <div class="absolute inset-x-0 -top-3 flex justify-center">
-            <span class="flex h-6 items-center justify-center rounded-full  px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white"></span>
-          </div>
-
-
-          <div class="mb-2 text-center text-2xl font-bold text-gray-800">Plan B</div>
-
-          <p class="mx-auto mb-8 px-8 text-center text-gray-500">Avanced feaures for Individuals and organizations</p>
-
-          <div class="space-y-2">
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">accidental loss or damage to building</span>
-            </div>
-            <!-- check - end -->
-
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">Loss or damage caused by collision, theft, fire or storms</span>
-            </div>
-            <!-- check - end -->
-
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">Theft and burglary</span>
-            </div>
-            <!-- check - end -->
-
-
-
-          </div>
-        </div>
-
-        <div class="mt-auto flex flex-col gap-8">
-          <div class="flex items-end justify-center gap-1">
-
-            <span class="self-start text-gray-600 text-green-700">R</span>
-            <span class="text-4xl font-bold text-gray-800 text-green-700">500</span>
-            <span class="text-gray-500">per user/month</span>
-          </div>
-
-
-        </div>
-      </div>
-      <!-- plan - end -->
-
-      <!-- plan - start -->
-      <div class="flex flex-col rounded-lg border p-4 pt-6">
-        <div class="mb-12">
-          <div class="mb-2 text-center text-2xl font-bold text-gray-800">Plan C</div>
-
-          <p class="mx-auto mb-8 px-8 text-center text-gray-500">Maximum performace for organisations</p>
-
-          <div class="space-y-2">
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">accidental loss or damage to building</span>
-            </div>
-            <!-- check - end -->
-
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">Loss or damage caused by collision, theft, fire or storms</span>
-            </div>
-            <!-- check - end -->
-
-
-        </div>
-
-        <div class="mt-auto flex flex-col gap-8">
-          <div class="flex items-end justify-center gap-1">
-
-            <span class="self-start text-gray-600  text-green-600">R</span>
-            <span class="text-4xl font-bold text-gray-800 text-green-600">300</span>
-            <span class="text-gray-500">per user/month</span>
-          </div>
-
-
-        </div>
-      </div>
-      <!-- plan - end -->
     </div>
-
-    <div class="text-center text-sm text-gray-500 sm:text-base">Need help deciding? <a href="#" class="text-gray-500 underline transition duration-100 hover:text-green-600 active:text-indigo-600">Get in touch</a>.</div>
   </div>
 </div>
 
-
-<form class="max-w-md mx-auto">
+<form class="max-w-md mx-auto" (ngSubmit)="onRegister(name.value, email.value, password.value)">
   <div class="mb-2 text-center text-2xl font-bold text-gray-800">Get your plan</div>
-
-  <div class="relative z-0 w-full mb-5 group">
-      <label for="underline_select" class="sr-only">Underline select</label>
-      <select id="underline_select" class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" name="plan">
-          <option value="">Choose a plan</option>
-          
-          <option value="Plan A">Plan A</option>
-          <option value="Plan B">Plan B</option>
-          <option value="Plan C">Plan C</option>
-      </select>
-  </div>
-
   <div class="grid md:grid-cols-2 md:gap-6">
-      <div class="relative z-0 w-full mb-5 group">
-          <input type="text" #name name="name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-600 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " required  />
-          <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green-600 peer-focus:dark:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First name</label>
-      </div>
-      
+    <div class="relative z-0 w-full mb-5 group">
+      <input type="text" #name name="name" class="block py-2.5" placeholder="First name" required />
+    </div>
+    <div class="relative z-0 w-full mb-5 group">
+      <input type="email" #email name="email" class="block py-2.5" placeholder="Email address" required />
+    </div>
+    <div class="relative z-0 w-full mb-5 group">
+      <input type="password" #password name="password" class="block py-2.5" placeholder="Password" required />
+    </div>
+  </div>
+  <button type="submit" class="text-white bg-green-600">Submit</button>
+</form>
 
-  <div class="relative z-0 w-full mb-5 group">
-      <input type="email" #email name="email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-600 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " required  />
-      <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-green-600 peer-focus:dark:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
-  </div>
-
-  <div class="relative z-0 w-full mb-5 group">
-      <input type="password" #password  name="password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-600 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " required />
-      <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-green-600 peer-focus:dark:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
-  </div>
-  <button  type="button" (ngSubmit)="onRegister(name.value, email.value, password.value)" class=" text-white bg-green-600 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-bl-gray-900 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-900 dark:hover:bg-green-400 dark:focus:ring-green-400">Submit</button>
-  </div>
-  <h1>clients data</h1>
-  <!-- <ol>@for (houseplans of houseplans; track houseplans){
-    <li>{{houseplans.name}}</li>}
-  </ol> -->
-  <div *ngFor="let plan of houseplans" class="plan">
-    <h3>{{ plan.name }}</h3>
-    <p>Price: R{{ plan.price }} per user/month</p>
-    <ul>
-      <li *ngFor="let feature of plan.features">{{ feature }}</li>
-    </ul>
-  </div>
-  
-
-  </form>
-  
-</div>
 
 

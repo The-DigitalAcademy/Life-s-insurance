@@ -1,10 +1,10 @@
 
-import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthService } from '../Services/auth.service';
 import { NavComponent } from '../nav/nav.component';
 import { NgFor, NgIf } from '@angular/common';
+import { Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -17,19 +17,22 @@ export class HomeInsurerComponent {
 houseplans:any[]=[];
 http = inject(HttpClient);
 authService = inject(AuthService);
-private apiUrl = 'http://localhost:3000';
+private apiUrl = 'http://localhost:3001';
+
 
 constructor(){
 
   this.getHouseplans().subscribe((resp:any)=>{
     console.log(resp);
     this.houseplans = resp
+
   })
 
   
 }
   getHouseplans() {
-    return this.http.get(`${this.apiUrl}/houseplans`)
+   return this.http.get(`${this.apiUrl}/houseplans`);
+    
   }
 
   onRegister(name: string, email: string, password: string) {
@@ -48,17 +51,19 @@ constructor(){
       return;
     }
 
-    this.authService.onRegister({ name, email, password }).subscribe({
-      next: (response: { error: string; }) => {
-        if (response.error) {
-          alert('Registration failed: ' + response.error);
-        } else {
-          alert('Registration successful!');
-        }
-      },
-      error: (error: { message: string; }) => {
-        alert('Registration failed: ' + error.message);
-      },
-    });
+
+    
+    // this.authService.onRegister({ name, email, password }).subscribe({
+    //   next: (response: { error: string; }) => {
+    //     if (response.error) {
+    //       alert('Registration failed: ' + response.error);
+    //     } else {
+    //       alert('Registration successful!');
+    //     }
+    //   },
+    //   error: (error: { message: string; }) => {
+    //     alert('Registration failed: ' + error.message);
+    //   },
+    // });
   }
 }

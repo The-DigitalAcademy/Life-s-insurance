@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { AuthService } from '../Services/auth.service';
 import { NgIf } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent {
   email: any;
   password: any;
 message: any;
-  
+
     
     
       onLogin(email: string, password: string) {
@@ -34,6 +35,4 @@ message: any;
           name: ''
         });
       }
-    
-
-}
+    }
