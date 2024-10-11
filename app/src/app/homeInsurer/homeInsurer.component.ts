@@ -1,61 +1,64 @@
 
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from '../UI/shared--UI/navbar/navbar.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { AuthService } from '../Services/auth.service';
-import { NavComponent } from "../nav/nav.component";
-import { NgIf } from '@angular/common';
-
-
-
+import { NavComponent } from '../nav/nav.component';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-
-  imports: [RouterOutlet, NavbarComponent, HttpClientModule, NavComponent,NgIf],
-
+  imports: [RouterOutlet, HttpClientModule, NavComponent, NgIf, NgFor],
   templateUrl: './homeInsurer.component.html',
-  styleUrl: './homeInsurer.component.css',
-
+  styleUrls: ['./homeInsurer.component.css'],
 })
 export class HomeInsurerComponent {
-name: any;
-message: any;
-onLogin(arg0: any,arg1: any,arg2: any) {
-throw new Error('Method not implemented.');
+houseplans:any[]=[];
+http = inject(HttpClient);
+authService = inject(AuthService);
+private apiUrl = 'http://localhost:3000';
+
+constructor(){
+
+  this.getHouseplans().subscribe((resp:any)=>{
+    console.log(resp);
+    this.houseplans = resp
+  })
+
+  
 }
-
-  authService = inject(AuthService)
-email: any;
-password: any;
-username: any;
-
-
+  getHouseplans() {
+    return this.http.get(`${this.apiUrl}/houseplans`)
+  }
 
   onRegister(name: string, email: string, password: string) {
-
     if (!name) {
-      alert("Username is required")
+      alert('Username is required');
       return;
     }
 
     if (!email) {
-      alert("Email is required")
+      alert('Email is required');
       return;
     }
 
     if (!password) {
-      alert("Password is required")
+      alert('Password is required');
       return;
     }
 
-    this.authService.onRegister({name, email, password})
+    this.authService.onRegister({ name, email, password }).subscribe({
+      next: (response: { error: string; }) => {
+        if (response.error) {
+          alert('Registration failed: ' + response.error);
+        } else {
+          alert('Registration successful!');
+        }
+      },
+      error: (error: { message: string; }) => {
+        alert('Registration failed: ' + error.message);
+      },
+    });
   }
-  
 }
-
-
-

@@ -1,94 +1,12 @@
+
+
 {
-    "plans": [
+    "houseplans": [
       {
         "id": 1,
         "name": "Plan A",
-        "description": "Business Interruption Coverage",
         "features": [
-          "Gross profits",
-          "Gross rentals",
-          "Gross revenue",
-          "Additional increase in the cost of working"
-        ],
-        "price": 3500.00
-      },
-      {
-        "id": 2,
-        "name": "Plan B",
-        "description": "Our comprehensive cover for buildings",
-        "features": [
-          "Fire",
-          "Lightning",
-          "Explosion",
-          "Storm",
-          "Wind",
-          "Water",
-          "Hail",
-          "Snow"
-        ],
-        "price": 5000.00
-      },
-      {
-        "id": 3,
-        "name": "Plan C",
-        "description": "Office Contents Coverage",
-        "features": [
-          "Fire",
-          "Explosion",
-          "Impact by vehicles",
-          "Wind",
-          "Hail",
-          "Earthquake"
-        ],
-        "price": 3000.00
-      }
-    ],
-    "clients": [
-      {
-        "id": 1,
-        "name": "Rashey",
-        "hasInsurance": true
-      },
-      {
-        "id": 2,
-        "name": "Life",
-        "hasInsurance": true
-      },
-      {
-        "id": 3,
-        "name": "Jade",
-        "hasInsurance": true
-      }
-    ],
-    "employees": [
-      {
-        "id": 1,
-        "name": "Yonela",
-        "position": "Manager"
-      },
-      {
-        "id": 2,
-        "name": "Life",
-        "position": "Sales Representative"
-      },
-      {
-        "id": 3,
-        "name": "Jade",
-        "position": "Support Staff"
-      }
-    ]
-  },
-
-
-  {
-    
-  "plan": [
-      {
-        "id": 1,
-        "name": "Plan A",
-        // "description": "Business Interruption Coverage",
-        "features": [
-          "accidental loss or damage to building",
+          "Accidental loss or damage to building",
           "Emergency plumbing, electrical and locksmith services",
           "Cover for keys, locks and remote controls",
           "Loss or damage caused by collision, fire or storms",
@@ -99,13 +17,11 @@
       {
         "id": 2,
         "name": "Plan B",
-        // "description": "Our comprehensive cover for buildings",
         "features": [
-          "",
-          "accidental loss or damage to building",
+          "Accidental loss or damage to building",
           "Emergency plumbing, electrical and locksmith services",
           "Cover for keys, locks and remote controls",
-          "Loss or damage caused by collision, fire or storms",
+          "Loss or damage caused by collision, fire or storms"
         ],
         "price": 500.00
       },
@@ -113,49 +29,13 @@
         "id": 3,
         "name": "Plan C",
         "description": "Office Contents Coverage",
-        "features": [  "accidental loss or damage to building",
+        "features": [
+          "Accidental loss or damage to building",
           "Emergency plumbing, electrical and locksmith services",
-         
-          "Loss or damage caused by collision, fire or storms",
-          
+          "Loss or damage caused by collision, fire or storms"
         ],
         "price": 300.00
       }
-    ],
-    "clients": [
-      {
-        "id": 1,
-        "name": "Mbali",
-        "hasInsurance": true
-      },
-      {
-        "id": 2,
-        "name": "Nthabi",
-        "hasInsurance": true
-      },
-      {
-        "id": 3,
-        "name": "Jack",
-        "hasInsurance": true
-      }
-    ],
-    "employee": [
-      {
-        "id": 1,
-        "name": "Mark Twain",
-        "position": "Manager"
-      },
-      {
-        "id": 2,
-        "name": "Emily Davis",
-        "position": "Sales Representative"
-      },
-      {
-        "id": 3,
-        "name": "Sam Wilson",
-        "position": "Support Staff"
-      }
     ]
   }
-    
   
