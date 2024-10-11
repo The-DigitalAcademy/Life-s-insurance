@@ -4,10 +4,9 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { BusinessComponent } from './pages/business/business.component';
 import { HomeComponent } from './pages/home/home.component';
-
-import { HomeInsurerComponent } from './homeInsurer/homeInsurer.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NavComponent } from './nav/nav.component';
+import { HomeInsurerComponent } from './pages/homeInsurer/homeInsurer.component';
 
 
 
@@ -22,7 +21,7 @@ export const routes: Routes = [
     { path: 'landing', component: LandingComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'business', title: 'Business', component: BusinessComponent },
-    {path:'homeInsurer',component:HomeInsurerComponent},
+    {path:'homeInsurer', component: HomeInsurerComponent},
     
 
 

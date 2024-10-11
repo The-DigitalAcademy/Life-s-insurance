@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NavbarComponent } from "../../UI/shared--UI/navbar/navbar.component";
-import { NavComponent } from "../../nav/nav.component";
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { UserInterface } from '../../../../Types 3/ UserInterface';
+import { NavbarComponent } from '../UI/shared--UI/navbar/navbar.component';
+
 
 @Component({
   selector: 'app-business',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, FormsModule, NavbarComponent, NavComponent, HttpClientModule, CommonModule],
-  templateUrl: './business.component.html',
-  styleUrls: ['./business.component.css'] 
+  imports: [RouterLink, RouterLinkActive, FormsModule, HttpClientModule, CommonModule, NavbarComponent],
+  templateUrl: './homeInsurer.component.html',
+  styleUrls: ['./homeInsurer.component.css'] 
 })
 export class BusinessComponent implements OnInit {
-  apiURL = 'http://localhost:3000/businessplan';
+  apiURL = 'http://localhost:3000/houseplans';
   businessplan: any[] = [];
   selectedPlan = '';
   firstName = '';
@@ -23,6 +23,7 @@ export class BusinessComponent implements OnInit {
   email = '';
   password = '';
   message = '';
+houseplans: any;
 
   constructor(private http: HttpClient) {}
 
