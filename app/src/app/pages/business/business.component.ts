@@ -49,7 +49,7 @@ export class BusinessComponent implements OnInit {
         lastName: this.lastName,
         email: this.email,
         password: this.password,
-        name: undefined // Adjust as needed
+        name: ''
       };
       this.submitData(formData);
     } else {
