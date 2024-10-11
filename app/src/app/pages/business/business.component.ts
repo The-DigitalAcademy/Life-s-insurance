@@ -5,7 +5,7 @@ import { NavbarComponent } from "../../UI/shared--UI/navbar/navbar.component";
 import { NavComponent } from "../../nav/nav.component";
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { UserInterface } from '../../../../Types 3/ UserInterface'; 
+import { UserInterface } from '../../../../Types 3/ UserInterface';
 
 @Component({
   selector: 'app-business',
@@ -49,13 +49,27 @@ export class BusinessComponent implements OnInit {
         lastName: this.lastName,
         email: this.email,
         password: this.password,
-        name: undefined
+        name: undefined // Adjust as needed
       };
       this.submitData(formData);
     } else {
       this.message = 'Please fill out all required fields and ensure the email is valid.';
       console.error(this.message);
     }
+  }
+
+  submitData(data: UserInterface): void {
+    this.http.post('http://localhost:3000/profile', data).subscribe(
+      response => {
+        console.log('Data submitted successfully:', response);
+        this.message = 'Registration successful!';
+        this.resetForm();
+      },
+      error => {
+        console.error('Error submitting data:', error);
+        this.message = 'Error submitting data. Please try again.';
+      }
+    );
   }
 
   isFormValid(): boolean {
@@ -69,19 +83,5 @@ export class BusinessComponent implements OnInit {
   resetForm(): void {
     this.selectedPlan = this.firstName = this.lastName = this.email = this.password = '';
     this.message = ''; 
-  }
-
-  private submitData(data: UserInterface): void {
-    this.http.post('http://localhost:3000/profile', data).subscribe(
-      response => {
-        console.log('Data submitted successfully:', response);
-        this.message = 'Registration successful!';
-        this.resetForm();
-      },
-      error => {
-        console.error('Error submitting data:', error);
-        this.message = 'Error submitting data. Please try again.';
-      }
-    );
   }
 }

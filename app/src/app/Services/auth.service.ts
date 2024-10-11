@@ -1,5 +1,4 @@
 import { inject, Injectable } from '@angular/core';
-// import { UserInterface } from '../Types/ UserInterface';
 import { Router } from '@angular/router';
 import { UserInterface } from '../../../Types 3/ UserInterface';
 import { Observable, of } from 'rxjs';
@@ -8,91 +7,32 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  users: UserInterface[] = [];
-  router = inject(Router);
+  onLogin(arg0: { email: string; password: string; name: string; firstName: string; lastName: string; selectedPlan: string; }) {
+    throw new Error('Method not implemented.');
+  }
+  private users: UserInterface[] = [];
+  private router = inject(Router);
 
   constructor() {}
 
-  // onRegister(userData: UserInterface) {
-  //   const userEmail = userData.email;
-
-  //   for (let i = 0; i < this.users.length; i++) {
-  //     if (this.users[i].email == userEmail) {
-  //       alert(`${userEmail} already taken`);
-  //       return;
-  //     }
-  //   }
-
-  //   this.users.push(userData);
-
-  //   alert(`${userData.name} was registered successfully!!!`);
-  //   this.router.navigate(['/login']);
-  // }
-  onRegister(userData: UserInterface): Observable<{ error?: string }> {
-    const userEmail = userData.email;
-
-    // Check if the email is already taken
-    if (this.users.some(user => user.email === userEmail)) {
-      return of({ error: `${userEmail} already taken` });
+  // Register a new user
+  registerUser(user: UserInterface): Observable<string> {
+    // Check if the user already exists
+    const userExists = this.users.some(existingUser => existingUser.email === user.email);
+    if (userExists) {
+      return of('User already exists');
     }
 
-    // Register the user
-    this.users.push(userData);
-    this.router.navigate(['/login']); // Navigate after successful registration
-    return of({}); // Return an observable with an empty object on success
+    // Add user to the list
+    this.users.push(user);
+    this.router.navigate(['/some-route']); // Redirect after registration
+    return of('Registration successful');
   }
-  onLogin(userData: UserInterface) {
-    console.log(userData);
 
-    for (let i = 0; i < this.users.length; i++) {
-      if (
-        this.users[i].email == userData.email &&
-        this.users[i].password == userData.password
-      ) {
-        alert(`Welcome ${this.users[i].name}`);
-        this.router.navigate(['/dashboard']);
-
-        return;
-      }
-    }
-
-    alert('Email or Password incorrect');
+  // Fetch all users
+  getUsers(): Observable<UserInterface[]> {
+    return of(this.users);
   }
+
+  // Additional methods (e.g., login, logout) can be added here
 }
-
-
-
-// import { Injectable, inject } from '@angular/core';
-
-// import { UserInterface} from '../Types/ UserInterface';
-// import { Router } from '@angular/router';
-// import { Observable, of } from 'rxjs';
-
-
-// @Injectable({
-//   providedIn: 'root',
-// })
-// export class AuthService {
-//   onLogin(arg0: { email: string; password: string; name: string; }) {
-//     throw new Error('Method not implemented.');
-//   }
-//   users: UserInterface[] = [];
-//   router = inject(Router);
-
-//   constructor() {}
-
-//   onRegister(userData: UserInterface): Observable<any> {
-//     const userEmail = userData.email;
-
-//     // Check if user already exists
-//     if (this.users.some(user => user.email === userEmail)) {
-//       return of({ error: `${userEmail} is already taken` });
-//     }
-
-//     // Add new user
-//     this.users.push(userData);
-//     alert(`${userData.name} was registered successfully!`);
-//     this.router.navigate(['/login']);
-//     return of({ success: true }); // Return a success observable
-//   }
-// }
