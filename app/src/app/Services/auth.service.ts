@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { UserInterface } from '../../../Types 3/ UserInterface';
+import{UserInterface}  from'../../../Types 3/ UserInterface';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -17,9 +17,18 @@ export class AuthService {
   onRegister(userData: UserInterface) {
     const userEmail = userData.email;
 
-  for (let i = 0; i < this.users.length; i++) 
+    for (let i = 0; i < this.users.length; i++) {
       if (this.users[i].email == userEmail) {
         alert(`${userEmail} already taken`);
         return;
       }
-    }}
+    }
+
+    this.users.push(userData);
+
+    alert(`${userData.name} was registered successfully!!!`);
+    this.router.navigate(['/Profile']);
+  }
+
+
+}

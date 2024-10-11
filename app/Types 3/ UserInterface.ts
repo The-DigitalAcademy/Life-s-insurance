@@ -4,5 +4,6 @@ export interface UserInterface {
     lastName: string;
     email: string;
     password: string;
-    selectedPlan: string; 
+    selectedPlan: this.selectedPlan,
+   
 }

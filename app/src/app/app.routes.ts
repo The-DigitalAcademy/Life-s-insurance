@@ -6,8 +6,7 @@ import { BusinessComponent } from './pages/business/business.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NavComponent } from './nav/nav.component';
-import { HomeInsurerComponent } from './pages/homeInsurer/homeInsurer.component';
-
+import { HomeInsurerComponent } from './homeInsurer/homeInsurer.component';
 
 
 
