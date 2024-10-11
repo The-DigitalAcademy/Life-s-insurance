@@ -1,6 +1,7 @@
 
 
 {
+
     "houseplans": [
       {
         "id": 1,
@@ -36,6 +37,51 @@
         ],
         "price": 300.00
       }
+    ],
+    
+      "businessplan": [
+        {
+          "id": 1,
+          "name": "Plan A",
+          "description": "Business Interruption Coverage",
+          "features": [
+            "Gross profits",
+            "Gross rentals",
+            "Gross revenue",
+            "Additional increase in the cost of working"
+          ],
+          "price": 3500.00
+        },
+        {
+          "id": 2,
+          "name": "Plan B",
+          "description": "Our comprehensive cover for buildings",
+          "features": [
+            "Fire",
+            "Lightning",
+            "Explosion",
+            "Storm",
+            "Wind",
+            "Water",
+            "Hail",
+            "Snow"
+          ],
+          "price": 5000.00
+        },
+        {
+          "id": 3,
+          "name": "Plan C",
+          "description": "Office Contents Coverage",
+          "features": [
+            "Fire",
+            "Explosion",
+            "Impact by vehicles",
+            "Wind",
+            "Hail",
+            "Earthquake"
+          ],
+          "price": 3000.00
+        }
     ]
   }
   
