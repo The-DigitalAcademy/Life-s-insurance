@@ -5,8 +5,7 @@ import { NavbarComponent } from "../../UI/shared--UI/navbar/navbar.component";
 import { NavComponent } from "../../nav/nav.component";
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { UserInterface } from '../../../../Types 3/ UserInterface';
-
+import { UserInterface } from '../../../../Types 3/ UserInterface'; 
 
 @Component({
   selector: 'app-business',
@@ -73,13 +72,16 @@ export class BusinessComponent implements OnInit {
   }
 
   private submitData(data: UserInterface): void {
-    this.http.post('http://localhost:4200/profile', data).subscribe(
+    this.http.post('http://localhost:3000/profile', data).subscribe(
       response => {
         console.log('Data submitted successfully:', response);
         this.message = 'Registration successful!';
         this.resetForm();
       },
-      error => console.error('Error submitting data:', error)
+      error => {
+        console.error('Error submitting data:', error);
+        this.message = 'Error submitting data. Please try again.';
+      }
     );
   }
 }

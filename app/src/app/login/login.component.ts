@@ -32,7 +32,10 @@ message: any;
     
         this.authService.onLogin({
           email, password,
-          name: ''
+          name: '',
+          firstName: '',
+          lastName: '',
+          selectedPlan: ''
         });
       }
     }
