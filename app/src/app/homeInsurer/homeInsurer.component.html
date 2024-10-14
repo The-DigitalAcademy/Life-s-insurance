@@ -1,300 +1,124 @@
 
-<p class="firstparagraph"><b>Home insurance tailored to your lifestyle</b>
-  Protect your home contents, buildings and portable items with home insurance from Discovery that is comprehensive, flexible and affordable. </p>
+
+   <!-- homeInsurer.component.html -->
+<!-- <p class="firstparagraph"><b>Home insurance tailored to your lifestyle</b>
+  Protect your home contents, buildings, and portable items with home insurance from Discovery that is comprehensive, flexible, and affordable.
+</p>
+
+<div class="bg-white py-6 sm:py-8 lg:py-12">
+  <div class="mx-auto max-w-screen-xl px-4 md:px-8">
+      <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl xl:mb-12">Our plans for you</h2>
+
+      <div class="mb-6 grid gap-6 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-8">
+          <div *ngFor="let plan of houseplans" class="flex flex-col rounded-lg border p-4 pt-6">
+              <div class="mb-12">
+                  <div class="mb-2 text-center text-2xl font-bold text-gray-800">{{ plan.name }}</div>
+                  <p class="mx-auto mb-8 px-8 text-center text-gray-500">For individuals and organizations</p>
+                  <div class="space-y-2">
+                      <div *ngFor="let feature of plan.features" class="flex gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span class="text-gray-600">{{ feature }}</span>
+                      </div>
+                  </div>
+              </div>
+              <div class="mt-auto flex flex-col gap-8">
+                  <div class="flex items-end justify-center gap-1">
+                      <span class="self-start text-gray-600 text-green-700">R</span>
+                      <span class="text-4xl font-bold text-gray-800 text-green-700">{{ plan.price }}</span>
+                      <span class="text-gray-500">per user/month</span>
+                  </div>
+                  <button (click)="selectedPlan = plan.name" class="bg-green-600 text-white">Select</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<form class="max-w-md mx-auto" (ngSubmit)="onRegister(name.value, email.value, password.value)">
+  <div class="mb-2 text-center text-2xl font-bold text-gray-800">Get your plan</div>
+  <div class="grid md:grid-cols-2 md:gap-6">
+      <div class="relative z-0 w-full mb-5 group">
+          <input type="text" #name name="name" class="block py-2.5" placeholder="First name" required />
+      </div>
+      <div class="relative z-0 w-full mb-5 group">
+          <input type="email" #email name="email" class="block py-2.5" placeholder="Email address" required />
+      </div>
+      <div class="relative z-0 w-full mb-5 group">
+          <input type="password" #password name="password" class="block py-2.5" placeholder="Password" required />
+      </div>
+  </div>
+  <button type="submit" class="text-white bg-green-600">Submit</button>
+</form> -->
+
+
+<app-navbar></app-navbar>
 
 
 <div class="bg-white py-6 sm:py-8 lg:py-12">
   <div class="mx-auto max-w-screen-xl px-4 md:px-8">
-    <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl xl:mb-12">Our plans for you</h2>
-
-    <div class="mb-6 grid gap-6 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-8">
-      <!-- plan - start -->
-      <div class="flex flex-col rounded-lg border p-4 pt-6">
-        <div class="mb-12">
-          <div class="mb-2 text-center text-2xl font-bold text-gray-800">Plan A</div>
-
-          <p class="mx-auto mb-8 px-8 text-center text-gray-500">For individuals and organizations who want to try our system</p>
-
-          <div class="space-y-2">
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">accidental loss or damage to building</span>
-            </div>
-            <!-- check - end -->
-
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">Emergency plumbing, electrical and locksmith services</span>
-            </div>
-            <!-- check - end -->
-
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">Cover for keys, locks and remote controls
-
-              </span>
-            </div>
-            <!-- check - end -->
-
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">Loss or damage caused by collision, theft, fire or storms
-              </span>
-            </div>
-            <!-- check - end -->
-          </div>
-        
-
-        <!-- check - start -->
-        <div class="flex gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg>
-
-          <span class="text-gray-600">Theft and burglary
-          </span>
-        </div>
-        <!-- check - end -->
-      </div>
-    
-
-        <div class="mt-auto flex flex-col gap-8">
-          <div class="flex items-end justify-center gap-1">
-          
-            <span class="self-start text-gray-600 text-green-700">R</span>
-            <span class="text-4xl font-bold text-gray-800 text-green-700">700</span>
-            <span class="text-gray-500">per user/month</span>
-          </div>
-
-          
-        </div>
-      </div>
-      <!-- plan - end -->
-
-      <!-- plan - start -->
-      <div class="relative flex flex-col rounded-lg border-2 border-indigo-500 p-4 pt-6">
-        <div class="mb-12">
-          <div class="absolute inset-x-0 -top-3 flex justify-center">
-            <span class="flex h-6 items-center justify-center rounded-full  px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white"></span>
-          </div>
-
-          
-          <div class="mb-2 text-center text-2xl font-bold text-gray-800">Plan B</div>
-
-          <p class="mx-auto mb-8 px-8 text-center text-gray-500">Avanced feaures for Individuals and organizations</p>
-
-          <div class="space-y-2">
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">accidental loss or damage to building</span>
-            </div>
-            <!-- check - end -->
-
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">Loss or damage caused by collision, theft, fire or storms</span>
-            </div>
-            <!-- check - end -->
-
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">Theft and burglary</span>
-            </div>
-            <!-- check - end -->
-
-            
-           
-          </div>
-        </div>
-
-        <div class="mt-auto flex flex-col gap-8">
-          <div class="flex items-end justify-center gap-1">
-            
-            <span class="self-start text-gray-600 text-green-700">R</span>
-            <span class="text-4xl font-bold text-gray-800 text-green-700">500</span>
-            <span class="text-gray-500">per user/month</span>
-          </div>
-
-         
-        </div>
-      </div>
-      <!-- plan - end -->
-
-      <!-- plan - start -->
-      <div class="flex flex-col rounded-lg border p-4 pt-6">
-        <div class="mb-12">
-          <div class="mb-2 text-center text-2xl font-bold text-gray-800">Plan C</div>
-
-          <p class="mx-auto mb-8 px-8 text-center text-gray-500">Maximum performace for organisations</p>
-
-          <div class="space-y-2">
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">accidental loss or damage to building</span>
-            </div>
-            <!-- check - end -->
-
-            <!-- check - start -->
-            <div class="flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-
-              <span class="text-gray-600">Loss or damage caused by collision, theft, fire or storms</span>
-            </div>
-            <!-- check - end -->
-
-            
-        </div>
-
-        <div class="mt-auto flex flex-col gap-8">
-          <div class="flex items-end justify-center gap-1">
-            
-            <span class="self-start text-gray-600  text-green-600">R</span>
-            <span class="text-4xl font-bold text-gray-800 text-green-600">300</span>
-            <span class="text-gray-500">per user/month</span>
-          </div>
-
-          
-        </div>
-      </div>
-      <!-- plan - end -->
+    <h2 class="mb-4 text-center text-2xl font-bold">Our plans for you</h2>
+    <p class="text-2xl font-bold">Our Home Insurance includes:</p>
+    <div class="mb-12">
+      Coverage for your home against fire, theft, liability, and more.
     </div>
 
-    <div class="text-center text-sm text-gray-500 sm:text-base">Need help deciding? <a href="#" class="text-gray-500 underline transition duration-100 hover:text-green-600 active:text-indigo-600">Get in touch</a>.</div>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div *ngFor="let plan of housePlans" class="flex flex-col border p-4" id="plan-{{ plan.name }}">
+        <h3 class="text-2xl font-bold">{{ plan.name }}</h3>
+        <p class="font-bold">{{ plan.description }}</p>
+        <p><b>The cover includes:</b></p>
+        <ul>
+          <li *ngFor="let feature of plan.features">{{ feature }}</li>
+        </ul>
+        <div>From R{{ plan.price }} per month</div>
+      </div>
+    </div>
+
+    <div class="text-center text-sm">
+      Need help? <a href="/contact" class="underline">Get in touch</a>.
+    </div>
   </div>
 </div>
 
+<!-- Registration Form -->
+<div class = "card">
+<div *ngIf="!isSubmitted">
+  <form class="max-w-md mx-auto" (ngSubmit)="onRegister()">
+    <div class="mb-2 text-center text-2xl font-bold text-gray-800">Get a quote</div>
 
-<div class="bg-white py-6 sm:py-8 lg:py-12">
-    <div class="mx-auto max-w-screen-xl px-4 md:px-8">
-      
-      <div class="mb-6 grid gap-6 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-8">
-        <!-- plan - start -->
-        <div class="flex flex-col rounded-lg border p-4 pt-6">
-          <div class="mb-12">
-            <div class="mb-2 text-center text-2xl font-bold text-gray-800">Get your plan</div>
-  
-            
-  
-        
-              
-
-
-<form class="register">
-    <!-- <div class="grid md:grid-cols-2 md:gap-6"> -->
-        <div class="relative z-0 w-full mb-5 group">
-            <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " required />
-            <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green-600 peer-focus:dark:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First name</label>
-        </div>
-
-        <div class="relative z-0 w-full mb-5 group">
-            <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " required />
-            <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green-600peer-focus:dark:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last name</label>
-        </div>
-
-        <div class="relative z-0 w-full mb-5 group">
-            <input type="text" name="floating_age" id="floating_age" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " required />
-            <label for="floating_age" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green-600 peer-focus:dark:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Age</label>
-        </div>
-        <div class="relative z-0 w-full mb-5 group">
-            <input type="numbers" name="floating_Idnumber" id="floating_Idnumber" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " required />
-            <label for="floating_age" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green-600 peer-focus:dark:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Identity number</label>
-        </div>
-
-        <!-- <div class="grid md:grid-cols-2 md:gap-6"> -->
-            <div class="relative z-0 w-full mb-5 group">
-                <input type="tel" pattern="" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " required />
-                <label for="floating_phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green-600 peer-focus:dark:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone number </label>
-            </div>
-    
-    <div class="relative z-0  mb-5 group">
-        <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " required />
-        <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-green-600 peer-focus:dark:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
-    </div>
     <div class="relative z-0 w-full mb-5 group">
-        <input type="password" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " required />
-        <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green-600 peer-focus:dark:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+      <label for="underline_select" class="sr-only">Choose a plan</label>
+      <select id="underline_select" class="block py-2.5 w-full text-sm text-gray-500 bg-transparent border-b-2 border-gray-300 appearance-none focus:outline-none focus:border-gray-200 peer" [(ngModel)]="selectedPlan" name="plan" required>
+        <option value="">Choose a plan</option>
+        <option *ngFor="let plan of housePlans" [value]="plan.name">{{ plan.name }}</option>
+      </select>
     </div>
-    <div class="relative z-0 w-full mb-5 group">
-        <input type="password" name="repeat_password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " required />
-        <label for="floating_repeat_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-green-600 peer-focus:dark:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
-    </div>
+
     <div class="grid md:grid-cols-2 md:gap-6">
-     
-      
-    </div>
-    <div class="grid md:grid-cols-2 md:gap-6">
-        
       <div class="relative z-0 w-full mb-5 group">
-          <input type="text" name="floating_company" id="floating_company" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " required />
-          <label for="floating_company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:-text-green-600peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Income</label>
+        <input type="text" name="first_name" id="first_name" class="block py-2.5 w-full text-sm text-gray-900 bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-green-600 peer" placeholder=" " required [(ngModel)]="firstName" />
+        <label for="first_name" class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First name</label>
       </div>
-      
-      
-
-
-      
-
-      <div class="flex items-center mb-4">
-        <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-        <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-500">Female</label>
+      <div class="relative z-0 w-full mb-5 group">
+        <input type="text" name="last_name" id="last_name" class="block py-2.5 w-full text-sm text-gray-900 bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-green-600 peer" placeholder=" " required [(ngModel)]="lastName" />
+        <label for="last_name" class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last name</label>
+      </div>
     </div>
-    <div class="flex items-center">
-        <input checked id="default-radio-2" type="radio" value="" name="default-radio" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-        <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-500">Male</label>
+
+    <div class="relative z-0 w-full mb-5 group">
+      <input type="email" name="email" id="email" class="block py-2.5 w-full text-sm text-gray-900 bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-green-600 peer" placeholder=" " required [(ngModel)]="email" />
+      <label for="email" class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
     </div>
-    
 
-
-<div>
-<form class="max-w-sm mx-auto">
-    <label for="underline_select" class="sr-only">Underline select</label>
-    <select id="underline_select"  class="block py-2.5 px-0 w-full text-sm  text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer   ">
-        <option selected>Choose a plan</option>
-        <option value="A">Plan A</option>
-        <option value="B">Plan B</option>
-        <option value="C">Plan C</option>
-        
-    </select>
+    <div class="relative z-0 w-full mb-5 group">
+      <input type="password" name="password" id="password" class="block py-2.5 w-full text-sm text-gray-900 bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-green-600 peer" placeholder=" " required [(ngModel)]="password" />
+      <label for="password" class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+    </div>
+    <button type="submit" class="text-white bg-green-600 hover:bg-green-600 rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" [disabled]="!isFormValid()">Submit</button>
   </form>
-  
-          
-  </div>
 
-  
-    </div>
-    <button  type="submit" class="text-white bg-green-600 hover:bg-green-300 focus:ring-4 focus:outline-none focus:ring-white-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Submit</button>
-  </form>
+</div>
+
+</div>
