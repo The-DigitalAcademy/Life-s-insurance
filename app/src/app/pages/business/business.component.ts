@@ -41,22 +41,47 @@ export class BusinessComponent implements OnInit {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
+  // onRegister(): void {
+  //   if (this.isFormValid()) {
+  //     const formData: UserInterface = {
+  //       selectedPlan: this.selectedPlan,
+  //       firstName: this.firstName,
+  //       lastName: this.lastName,
+  //       email: this.email,
+  //       password: this.password,
+  //       name: ''
+  //     };
+  //     this.submitData(formData);
+  //   } else {
+  //     this.message = 'Please fill out all required fields and ensure the email is valid.';
+  //     console.error(this.message);
+  //   }
+  // }
   onRegister(): void {
     if (this.isFormValid()) {
       const formData: UserInterface = {
-        selectedPlan: this.selectedPlan,
+        name: `${this.firstName} ${this.lastName}`,
         firstName: this.firstName,
         lastName: this.lastName,
         email: this.email,
         password: this.password,
-        name: ''
+        selectedPlan: this.selectedPlan,
       };
       this.submitData(formData);
+      
+      // Prepare email content
+      const subject = 'Home Insurance Registration';
+      const body = `Name: ${this.firstName} ${this.lastName}\nEmail: ${this.email}\nSelected Plan: ${this.selectedPlan}`;
+      
+      // Open email client
+      window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     } else {
-      this.message = 'Please fill out all required fields and ensure the email is valid.';
+      this.message =
+        'Please fill out all required fields and ensure the email is valid.';
       console.error(this.message);
     }
   }
+  
 
   submitData(data: UserInterface): void {
     this.http.post('http://localhost:3000/profile', data).subscribe(

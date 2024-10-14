@@ -23,7 +23,7 @@
     <div class="text-center text-sm">Need help? <a href="/contact" class="underline">Get in touch</a>.</div>
   </div>
 </div>
-
+<div class = "card">
 <form class="max-w-md mx-auto">
   <div class="mb-2 text-center text-2xl font-bold text-gray-800">Get a quote</div>
 
@@ -56,7 +56,8 @@
     <label for="password" class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
   </div>
 
-  <button type="button" (click)="onRegister()" class="text-white bg-green-600 hover:bg-green-500 rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" [disabled]="!isFormValid()">Submit</button>
+  <button type="button" (click)="onRegister()" class="text-white bg-green-600 hover:bg-green-600 rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" [disabled]="!isFormValid()">Submit</button>
 
-  <div class="text-center text-green-600 mt-4" *ngIf="message">{{ message }}</div>
+  <!-- <div class="text-center text-green-600 mt-4" *ngIf="message">{{ message }}</div> -->
 </form>
+</div>

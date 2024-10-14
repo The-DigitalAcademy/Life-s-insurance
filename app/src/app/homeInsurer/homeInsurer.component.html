@@ -1,7 +1,7 @@
 
 
    <!-- homeInsurer.component.html -->
-<p class="firstparagraph"><b>Home insurance tailored to your lifestyle</b>
+<!-- <p class="firstparagraph"><b>Home insurance tailored to your lifestyle</b>
   Protect your home contents, buildings, and portable items with home insurance from Discovery that is comprehensive, flexible, and affordable.
 </p>
 
@@ -50,4 +50,75 @@
       </div>
   </div>
   <button type="submit" class="text-white bg-green-600">Submit</button>
-</form>
+</form> -->
+
+
+<app-navbar></app-navbar>
+
+
+<div class="bg-white py-6 sm:py-8 lg:py-12">
+  <div class="mx-auto max-w-screen-xl px-4 md:px-8">
+    <h2 class="mb-4 text-center text-2xl font-bold">Our plans for you</h2>
+    <p class="text-2xl font-bold">Our Home Insurance includes:</p>
+    <div class="mb-12">
+      Coverage for your home against fire, theft, liability, and more.
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div *ngFor="let plan of housePlans" class="flex flex-col border p-4" id="plan-{{ plan.name }}">
+        <h3 class="text-2xl font-bold">{{ plan.name }}</h3>
+        <p class="font-bold">{{ plan.description }}</p>
+        <p><b>The cover includes:</b></p>
+        <ul>
+          <li *ngFor="let feature of plan.features">{{ feature }}</li>
+        </ul>
+        <div>From R{{ plan.price }} per month</div>
+      </div>
+    </div>
+
+    <div class="text-center text-sm">
+      Need help? <a href="/contact" class="underline">Get in touch</a>.
+    </div>
+  </div>
+</div>
+
+<!-- Registration Form -->
+<div class = "card">
+<div *ngIf="!isSubmitted">
+  <form class="max-w-md mx-auto" (ngSubmit)="onRegister()">
+    <div class="mb-2 text-center text-2xl font-bold text-gray-800">Get a quote</div>
+
+    <div class="relative z-0 w-full mb-5 group">
+      <label for="underline_select" class="sr-only">Choose a plan</label>
+      <select id="underline_select" class="block py-2.5 w-full text-sm text-gray-500 bg-transparent border-b-2 border-gray-300 appearance-none focus:outline-none focus:border-gray-200 peer" [(ngModel)]="selectedPlan" name="plan" required>
+        <option value="">Choose a plan</option>
+        <option *ngFor="let plan of housePlans" [value]="plan.name">{{ plan.name }}</option>
+      </select>
+    </div>
+
+    <div class="grid md:grid-cols-2 md:gap-6">
+      <div class="relative z-0 w-full mb-5 group">
+        <input type="text" name="first_name" id="first_name" class="block py-2.5 w-full text-sm text-gray-900 bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-green-600 peer" placeholder=" " required [(ngModel)]="firstName" />
+        <label for="first_name" class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First name</label>
+      </div>
+      <div class="relative z-0 w-full mb-5 group">
+        <input type="text" name="last_name" id="last_name" class="block py-2.5 w-full text-sm text-gray-900 bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-green-600 peer" placeholder=" " required [(ngModel)]="lastName" />
+        <label for="last_name" class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last name</label>
+      </div>
+    </div>
+
+    <div class="relative z-0 w-full mb-5 group">
+      <input type="email" name="email" id="email" class="block py-2.5 w-full text-sm text-gray-900 bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-green-600 peer" placeholder=" " required [(ngModel)]="email" />
+      <label for="email" class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
+    </div>
+
+    <div class="relative z-0 w-full mb-5 group">
+      <input type="password" name="password" id="password" class="block py-2.5 w-full text-sm text-gray-900 bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-green-600 peer" placeholder=" " required [(ngModel)]="password" />
+      <label for="password" class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+    </div>
+    <button type="submit" class="text-white bg-green-600 hover:bg-green-600 rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" [disabled]="!isFormValid()">Submit</button>
+  </form>
+
+</div>
+
+</div>

@@ -1,5 +1,11 @@
 
 
+<div *ngIf="view <=576">
+    <router-outlet/>
+</div>
 
-<router-outlet />
+
+<div *ngIf="view > 576">
+    <h3>Only Use Mobile</h3>
+</div>
 
